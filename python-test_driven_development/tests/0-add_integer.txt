@@ -1,0 +1,67 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+This document demonstrates the usage of the ``add_integer`` function from the  
+``0-add_integer`` module. Start by importing the function like this:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Example calls and their results:
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(4, 5.6)
+9  # Floats are converted to integers before addition
+
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(3.5, 2)
+5
+
+>>> add_integer("Hello", 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Additional Tests
+----------------
+
+### Float overflow test
+
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+### Test for NaN conversion failure
+
+>>> add_integer(float('nan'), 1)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+### Call with one argument (default b = 98)
+
+>>> add_integer(5)
+103
+
+>>> add_integer(5, 3)
+8
+
+### Call without arguments
+
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
