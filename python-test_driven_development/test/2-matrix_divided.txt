@@ -1,0 +1,70 @@
+Module: 0-add_integer
+=====================
+
+Function: add_integer(a, b=98)
+------------------------------
+
+Overview:
+---------
+The `add_integer` function is a simple utility that adds two values.
+It expects integers as input but also accepts floats, which are safely
+converted to integers before the operation. The second argument is optional
+and defaults to 98. If the input values are invalid (e.g., strings or special
+float values like NaN or infinity), the function raises clear and appropriate errors.
+
+Examples:
+---------
+
+Import the function first:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Basic usage:
+>>> add_integer(10, 5)
+15
+
+Using a negative number:
+>>> add_integer(20, -3)
+17
+
+Mixing integers and floats:
+>>> add_integer(7, 3.8)
+10
+
+>>> add_integer(6.9, 2)
+8
+
+Invalid input: string instead of number:
+>>> add_integer(5, "Python")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer("Hello", 7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Edge cases with float limits:
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'), 1)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+Calling with one argument (uses default b=98):
+>>> add_integer(2)
+100
+
+>>> add_integer(50, 25)
+75
+
+Missing both arguments:
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+

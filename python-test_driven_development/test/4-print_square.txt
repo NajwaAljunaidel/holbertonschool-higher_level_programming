@@ -1,0 +1,71 @@
+Module: 4-print_square
+=====================
+
+Function: print_square(size)
+----------------------------
+
+Overview:
+---------
+The `print_square` function prints a square made of `#` characters  
+with each side having a length equal to the integer `size`. The  
+function expects a non-negative integer as input. If the input is zero,  
+nothing is printed. If the input is negative or not an integer, the  
+function raises an appropriate error with a clear message.
+
+Usage Examples:
+---------------
+
+Import the function first:
+>>> print_square = __import__('4-print_square').print_square
+
+Print a 4x4 square:
+>>> print_square(4)
+####
+####
+####
+####
+
+Print a 10x10 square:
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+Print a square of size 0 (prints nothing):
+>>> print_square(0)
+
+Print a 1x1 square:
+>>> print_square(1)
+#
+
+Error handling examples:
+------------------------
+
+Negative size:
+>>> try:
+...     print_square(-1)
+... except Exception as e:
+...     print(e)
+size must be >= 0
+
+Non-integer size:
+>>> try:
+...     print_square('a')
+... except Exception as e:
+...     print(e)
+size must be an integer
+
+Missing argument:
+>>> try:
+...     print_square()
+... except Exception as e:
+...     print(e)
+print_square() missing 1 required positional argument: 'size'
+
