@@ -1,0 +1,51 @@
+Module: 5-text_indentation
+=========================
+
+Function: text_indentation(text)
+-------------------------------
+
+Overview:
+---------
+The `text_indentation` function prints the input text with  
+proper indentation after each sentence-ending punctuation  
+(markers like `.`, `?`, and `:`). It expects a single argument  
+which must be a string. Passing a non-string argument raises  
+a `TypeError`. If the input text contains no punctuation, the  
+function prints the text as is.
+
+Usage Examples:
+---------------
+
+Import the function:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic usage:
+>>> text_indentation("some text.")
+some text.
+<BLANKLINE>
+
+Passing a non-string argument (raises error):
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+>>> try:
+...     text_indentation(None)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+Missing argument:
+>>> try:
+...     text_indentation()
+... except Exception as e:
+...     print(e)
+text_indentation() missing 1 required positional argument: 'text'
+
+Text without punctuation:
+>>> text = "This is a test without punctuation"
+>>> text_indentation(text)
+This is a test without punctuation
+
