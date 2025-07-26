@@ -1,27 +1,31 @@
 #!/usr/bin/python3
 """
-This is the add_integer module.
-
-This module supplies one function, add_integer().
+This is the "0-add_integer" module.
+The example module supplies one function, add_integer().  For example,
+>>> add_integer(1, 2)
+3
 """
 
 
 def add_integer(a, b=98):
-    
-    if type(a) in [int, float]:
-        try:
-            a = int(a)
-        except:
-            raise TypeError('a must be an integer')
-    else:
-        raise TypeError('a must be an integer')
 
-    if type(b) in [int, float]:
-        try:
-            b = int(b)
-        except:
-            raise TypeError('b must be an integer')
-    else:
-        raise TypeError('b must be an integer')
+    """Return the sum of two numbers.
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(100, -2)
+    98
+    >>> try:
+    ...    print(add_integer(4, "School"))
+    ... except Exception as e:
+    ...    print(e)
+    b must be an integer
+    """
 
-    return a + b
+    if isinstance(a, int) and isinstance(b, int):
+        return a + b
+    elif isinstance(a, float) or isinstance(b, float):
+        return int(a) + int(b)
+    if not isinstance(a, int):
+        raise TypeError("a must be an integer")
+    else:
+        raise TypeError("b must be an integer")
