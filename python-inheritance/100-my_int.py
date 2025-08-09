@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-# 100-my_int.py
-# Brennan D Baraban <375@holbertonschool.com>
-"""Defines a class MyInt that inherits from int."""
+"""Defines a class MyInt that inverts equality operators."""
 
 
 class MyInt(int):
-    """Invert int operators == and !=."""
+    """MyInt behaves like int, but inverts == and !=."""
 
-    def __eq__(self, value):
-        """Override == opeartor with != behavior."""
-        return self.real != value
+    def __eq__(self, other):
+        """Override ==."""
+        return super().__ne__(other)
 
-    def __ne__(self, value):
-        """Override != operator with == behavior."""
-        return self.real == value
+    def __ne__(self, other):
+        """Override !=."""
+        return super().__eq__(other)
