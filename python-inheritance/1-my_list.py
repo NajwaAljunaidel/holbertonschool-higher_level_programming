@@ -1,20 +1,12 @@
-
 #!/usr/bin/python3
-"""
-This module defines a custom list class that inherits from the built-in list.
-
-"""
+# 1-my_list.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines an inherited list class MyList."""
 
 
 class MyList(list):
-    """
-    A subclass of list.
-    """
+    """Implements sorted printing for the built-in list class."""
 
     def print_sorted(self):
-        """
-        Prints the elements of the list in ascending sorted order.
-
-        """
+        """Print a list in sorted ascending order."""
         print(sorted(self))
-
